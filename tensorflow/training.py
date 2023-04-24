@@ -6,7 +6,7 @@ import numpy as np
 import tensorflowjs as tfjs
 
 train_ds, val_ds = utils.audio_dataset_from_directory(
-    directory='../whisper/samples',
+    directory='../samples',
     batch_size=64,
     validation_split=0.2,
     seed=0,
