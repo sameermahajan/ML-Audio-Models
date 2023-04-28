@@ -1,4 +1,4 @@
-let mediaRecorder;
+let mediaRecorder=null;
 let chunks = [];
 
 const recordButton = document.getElementById('recordButton');
@@ -9,7 +9,9 @@ recordButton.addEventListener('click', startRecording);
 stopButton.addEventListener('click', stopRecording);
 playButton.addEventListener('click', playRecording);
 
+
 function startRecording() {
+
 	chunks = [];
 	navigator.mediaDevices.getUserMedia({audio: true})
 	  .then(stream => {
@@ -36,7 +38,6 @@ function stopRecording() {
 recordButton.style.backgroundColor = '';
 	stopButton.disabled = true;
 	playButton.disabled = false;
-	createSpectrogram(chunks); // call to createSpectrogram with audio as argument 
 }
 
 const audio = new Audio();
@@ -48,8 +49,9 @@ function playRecording() {
 	const audioURL = URL.createObjectURL(blob);
 	audio.src = audioURL;
 	audio.play();
+	createSpectrogram(audio);
+	      
 }
-
 
 mediaRecorder.addEventListener('stop', event => {
 	const audioBlob = new Blob(chunks, { type: 'audio/ogg; codecs=opus' });
@@ -60,5 +62,46 @@ mediaRecorder.addEventListener('stop', event => {
 	audio.play();
 	chunks = [];
 });
-function createSpectrogram(chunks) {
-}
+
+
+function createSpectrogram(audio) {
+	const canvas = document.getElementById('spectrogram');
+	const context = canvas.getContext('2d');
+	context.clearRect(0, 0, canvas.width, canvas.height);
+	const audioContext = new AudioContext();
+	const source = audioContext.createMediaElementSource(audio);
+	const analyser = audioContext.createAnalyser();
+	source.connect(analyser);
+	analyser.connect(audioContext.destination);
+	analyser.fftSize = 2048;
+	const bufferLength = analyser.frequencyBinCount;
+	const dataArray = new Uint8Array(bufferLength);
+	const width = canvas.width;
+	const height = canvas.height;
+	const imageData = context.createImageData(width, height);
+	context.fillStyle = 'red';
+	context.fillRect(0, 0, width, height);
+	function draw() {
+		
+	  analyser.getByteFrequencyData(dataArray);
+
+	  for (let x = 0; x < width; x++) {
+	    const value = dataArray[Math.floor(x / width * bufferLength)];
+	    for (let y = 0; y < value / 255 * height; y++) {
+	      const index = (x + (height - y - 1) * width) * 4;
+	      imageData.data[index] = value;
+	      imageData.data[index + 1] = value;
+	      imageData.data[index + 2] = value;
+	      imageData.data[index + 3] = 255;
+	    }
+	  }
+	  context.putImageData(imageData, 0, 0);
+	  
+	  // Request the next animation frame
+	  requestAnimationFrame(draw);
+	}
+
+	// Start drawing the spectrogram
+	draw();
+      }
+      
