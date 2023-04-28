@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Audio Record & Predict</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"> </script>
 </head>
 <body>
 	<h1>Audio Record & Predict</h1>
@@ -14,7 +14,7 @@
     <hr></hr>
 	</div>
   <!-- placeholder for display spectrogram -->
-  <!-- <canvas id="spectrogram" width="600" height="300"></canvas> -->
+  <canvas id="spectrogram" width="600" height="300"></canvas>
 
 	<div class="button-group">
 		<button id="playButton" disabled>Play</button>
@@ -22,4 +22,5 @@
   <h1></h1>
 	<script src="app.js"></script>
 </body>
+	
 </html>
