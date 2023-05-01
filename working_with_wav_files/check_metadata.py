@@ -1,6 +1,5 @@
 import wave
+import sys
 
-for i in range(1,100):
-    input = "..\\app\\numbers\\" + str(i) + ".wav"
-    wf = wave.open(input, 'rb')
-    print (input, "#channels = ", wf.getnchannels(), "#frames = ", wf.getnframes(), "sample width = ", wf.getsampwidth(), "sample rate = ", wf.getframerate())
+wf = wave.open(sys.argv[1], 'rb')
+print (input, "#channels = ", wf.getnchannels(), "#frames = ", wf.getnframes(), "sample width = ", wf.getsampwidth(), "sample rate = ", wf.getframerate())
