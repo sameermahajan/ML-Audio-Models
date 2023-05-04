@@ -9,4 +9,4 @@ This repository has code working with various audio models like
 - **samples**: folder has audio recordings of numbers 1 through 40 in marathi
 - **working_with_wav_files**: folder has handy snippets of python code required for processing of wav files
 
-[(Blog post](https://sameermahajan.medium.com/ml-working-with-audio-data-34b296d3e413)
+[Blog post](https://sameermahajan.medium.com/ml-working-with-audio-data-34b296d3e413)
