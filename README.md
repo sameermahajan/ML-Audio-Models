@@ -2,6 +2,8 @@
 
 [Motivating Use Case](https://youtu.be/L3L4mEszzTs)
 
+[Motivating Use Case](https://github.com/sameermahajan/ML-Audio-Models/blob/main/ML%20Use%20Case%20for%20Practising%20Tables.mp4)
+
 This repository has code working with various audio models like
 
 - **tensorflow**: this has a CNN trained from scratch using collected audio samples
