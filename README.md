@@ -11,4 +11,4 @@ This repository has code working with various audio models like
 
 [Blog post](https://sameermahajan.medium.com/ml-working-with-audio-data-34b296d3e413)
 
-<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@sameermahajan/0"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@sameermahajan/0" alt="ML: Working with Audio Data"> 
+<a target="_blank" href="https://github-readme-medium-recent-article.vercel.app/medium/@sameermahajan/1"><img src="https://github-readme-medium-recent-article.vercel.app/medium/@sameermahajan/1" alt="ML: Working with Audio Data"> 
