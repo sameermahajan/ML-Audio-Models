@@ -1,5 +1,7 @@
 # ML-Audio-Models
 
+[Motivating Use Case](https://youtu.be/L3L4mEszzTs)
+
 This repository has code working with various audio models like
 
 - **tensorflow**: this has a CNN trained from scratch using collected audio samples
