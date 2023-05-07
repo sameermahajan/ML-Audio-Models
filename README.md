@@ -1,7 +1,6 @@
 # ML-Audio-Models
 
 [![Use Case](UseCase.JPG)](https://youtu.be/L3L4mEszzTs)
-[YouTube Video Explaining Motivating Use Case](https://youtu.be/L3L4mEszzTs)
 
 This repository has code working with various audio models like
 
@@ -12,5 +11,4 @@ This repository has code working with various audio models like
 - **samples**: folder has audio recordings of numbers 1 through 40 in marathi
 - **working_with_wav_files**: folder has handy snippets of python code required for processing of wav files
 
-[ML: Working with Audio Data](https://sameermahajan.medium.com/ml-working-with-audio-data-34b296d3e413) medium blog post
 [![Blog](blog.JPG)](https://sameermahajan.medium.com/ml-working-with-audio-data-34b296d3e413)
