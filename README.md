@@ -32,3 +32,10 @@ With above findings, we are going to
 - add UI to the app
 - wave the offline requirement and try to build an online app that we can host and interact with from a browser.
 - train tensoflow model with more data and possibly improve the model as RNN, more layers etc.
+
+## Issue Deploying pyaudio package on android
+
+For using SpeechRecognition package we need pyaudio package. To bundle it in an apk (to deploy and use it on android), it needs to be installed using pip.
+There are 3 ways (local linux, google colab, GitHub action) for deploying python apps on android as detailed in https://towardsdatascience.com/3-ways-to-convert-python-app-into-apk-77f4c9cd55af
+
+I tried first and [third](https://github.com/sameermahajan/PaadasML) options without any luck. I run into different errors which I am still not able to get around. We can try the 2nd option or try the first option on a different linux system.
