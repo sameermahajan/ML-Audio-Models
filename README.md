@@ -38,4 +38,21 @@ With above findings, we are going to
 For using SpeechRecognition package we need pyaudio package. To bundle it in an apk (to deploy and use it on android), it needs to be installed using pip.
 There are 3 ways (local linux, google colab, GitHub action) for deploying python apps on android as detailed in https://towardsdatascience.com/3-ways-to-convert-python-app-into-apk-77f4c9cd55af
 
-I tried first and [third](https://github.com/sameermahajan/PaadasML) options without any luck. I run into different errors which I am still not able to get around. We can try the 2nd option or try the first option on a different linux system.
+I tried first and [third](https://github.com/sameermahajan/PaadasML) options without any luck. I run into the exact same error on both the systems
+
+```
+/usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
+34939  #include <bits/libc-header-start.h>
+34940           ^~~~~~~~~~~~~~~~~~~~~~~~~~
+34941  1 error generated.
+34942  error: command '/usr/bin/ccache' failed with exit code 1
+34943  error: subprocess-exited-with-error
+34944  
+34945  × Building wheel for pyaudio (pyproject.toml) did not run successfully.
+34946  │ exit code: 1
+ERROR: Failed building wheel for pyaudio
+34954Failed to build pyaudio
+34955ERROR: Could not build wheels for pyaudio, which is required to install pyproject.toml-based projects
+```
+
+which I am still not able to get around. We can try the 2nd option or try the first option on a different linux system.
