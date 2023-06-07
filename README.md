@@ -33,12 +33,12 @@ With above findings, we are going to
 - wave the offline requirement and try to build an online app that we can host and interact with from a browser.
 - train tensoflow model with more data and possibly improve the model as RNN, more layers etc.
 
-## Issue Deploying pyaudio package on android
+## Issue Deploying pyaudio package on android (ARM)
 
 For using SpeechRecognition package we need pyaudio package. To bundle it in an apk (to deploy and use it on android), it needs to be installed using pip.
 There are 3 ways (local linux, google colab, GitHub action) for deploying python apps on android as detailed in https://towardsdatascience.com/3-ways-to-convert-python-app-into-apk-77f4c9cd55af
 
-I tried first and [third](https://github.com/sameermahajan/PaadasML) options without any luck. I run into the exact same error on both the systems
+I tried all three options without any luck. I run into the exact same error on all the systems i.e.
 
 ```
 /usr/include/limits.h:26:10: fatal error: 'bits/libc-header-start.h' file not found
@@ -55,4 +55,4 @@ ERROR: Failed building wheel for pyaudio
 34955ERROR: Could not build wheels for pyaudio, which is required to install pyproject.toml-based projects
 ```
 
-which I am still not able to get around. We can try the 2nd option or try the first option on a different linux system.
+which I am still not able to get around. I think the problem is with cross compilation since all these systems are x86_64 Ubuntu and we want to build the apk for ARM. I could build x86_64 based apk on my local system however it doesn't work on most phones :(
