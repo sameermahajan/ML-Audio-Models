@@ -61,3 +61,5 @@ ERROR: Failed building wheel for pyaudio
 which I am still not able to get around. I think the problem is with cross compilation since all these systems are x86_64 Ubuntu and we want to build the apk for ARM. I could build x86_64 based apk on my local system however it doesn't work on most phones :( One option is to get hold of an ARM system (don't know how to do that :() and try a build there.
 
 I also explored options of python for android and kivy launcher without luck.
+
+Jumping on ChatGPT bandwagon, I also converted this kivy app into react native. We are currently exploring whether we can build it into an android apk using studio.
