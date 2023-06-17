@@ -20,18 +20,21 @@ We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which i
 
 We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy) only upto 20 commands / numbers. However when I try to train it for 40 numbers (each one having around 50 samples) the accuracy drops to around 65%. Not sure whether I need to have more training data and/or build more complex model. The questions here are how much training data we should shoot for and what would be the improved model if we need to go for one.
 
-We explored google recognition / speech_recognition but it needs internet / online connection and is not all that great.
+We explored google recognition / speech_recognition but it needs internet / online connection.
 
-We have put together a [Kivy android app](https://github.com/sameermahajan/Paadas) that can work in conjunction with Marathi voice keyboard(s) though it is [not a very seamless experience](https://youtube.com/shorts/Gfeo_Dyakoc). Also these voice keyboards need internet / online connection and are not all that great. We think underneath they might anyway be using something like google recognition / speech_recognition that we have explored and mentioned above.
+We have put together a [kivy app](https://github.com/sameermahajan/PaadasML) having integration with google speech recognition that you can try out.
+
+We have put together a [flask web app](https://github.com/sameermahajan/PaadasMLFlaskApp) again having integration with google speech recognition that also you can try out. We are looking to host it so that you can try it out directly and will share its link here once done.
+
+We have also put together a [Kivy android app](https://github.com/sameermahajan/Paadas) that can work in conjunction with Marathi voice keyboard(s) though it is [not a very seamless experience](https://youtube.com/shorts/Gfeo_Dyakoc). Also these voice keyboards need internet / online connection and might not be all that great. We think underneath they might anyway be using something like google speech recognition / speech_recognition that we have explored and mentioned above.
 
 We are also exploring wave2vec2_xlsr_marathi_model which is just over 1 GB but need to test further.
 
 ## Current Plan
 
 With above findings, we are going to
-- add UI to the app
-- wave the offline requirement and try to build an online app that we can host and interact with from a browser.
-- train tensoflow model with more data and possibly improve the model as RNN, more layers etc.
+- put out PaadasML and / or PaadasMLFlaskApp for feedback and audio sample collection
+- train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
 
 ## Issue Deploying pyaudio package on android (ARM)
 
