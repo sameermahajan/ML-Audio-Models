@@ -39,7 +39,7 @@ We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-process
 ## Current Plan
 
 With above findings, we are going to
-- put out PaadasML and / or PaadasMLFlaskApp for feedback and audio sample collection
+- put out [PaadasML](https://github.com/sameermahajan/PaadasML) and / or [PaadasMLFlaskApp](https://github.com/sameermahajan/PaadasMLFlaskApp) for feedback and audio sample collection
 - train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
 
 ## Issue Deploying pyaudio package on android (ARM)
