@@ -8,6 +8,7 @@ This repository has code working with various audio models like
 - **whisper**: whisper is a speech to text model developed by OpenAI. This folder has code working with a variety of pretrained models, fine tuning them with your own audio samples, creating datasets for your samples, working with hugging face datasets etc.
 - **speech_recognition**: speech_recognition is a python package. It is a speech to text model using Google APIs
 - **wave2vec2_xlsr_marathi_model**
+- **Shazam**
 - **samples**: folder has audio recordings of numbers 1 through 40 in marathi
 - **working_with_wav_files**: folder has handy snippets of python code required for processing of wav files
 - **misc**: folder has miscellaneous handy code developed during the project
@@ -29,6 +30,11 @@ We have put together a [flask web app](https://github.com/sameermahajan/PaadasML
 We have also put together a [Kivy android app](https://github.com/sameermahajan/Paadas) that can work in conjunction with Marathi voice keyboard(s) though it is [not a very seamless experience](https://youtube.com/shorts/Gfeo_Dyakoc). Also these voice keyboards need internet / online connection and might not be all that great. We think underneath they might anyway be using something like google speech recognition / speech_recognition that we have explored and mentioned above.
 
 We are also exploring wave2vec2_xlsr_marathi_model which is just over 1 GB but need to test further.
+
+We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition). However when we tried [finger printing](https://github.com/worldveil/dejavu) on our recorded audio samples (about 50 per number), for a few numbers, the fingerprints were totally different for different samples of the same number. It makes us believe that this approach also won't work in our case. It could be due to the difference in our use case of
+- just vocal and no instruments causing different, may be narrower frequency spread
+- short samples of about 3-4 seconds meaning no multi fingerprint checkpoints for the same sample for comparison
+- uncotrolled varied recording conditions unlike songs etc.
 
 ## Current Plan
 
