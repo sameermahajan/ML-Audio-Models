@@ -5,6 +5,7 @@
 This repository has code working with various audio models like
 
 - **tensorflow**: this has a CNN trained from scratch using collected audio samples
+- **hierachical models**: build two level models for above
 - **whisper**: whisper is a speech to text model developed by OpenAI. This folder has code working with a variety of pretrained models, fine tuning them with your own audio samples, creating datasets for your samples, working with hugging face datasets etc.
 - **speech_recognition**: speech_recognition is a python package. It is a speech to text model using Google APIs
 - **wave2vec2_xlsr_marathi_model**
@@ -20,6 +21,8 @@ This repository has code working with various audio models like
 We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which is reasonable but it is rather large over 6 GB to fit in an android app.
 
 We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy) only upto 20 commands / numbers. However when I try to train it for 40 numbers (each one having around 50 samples) the accuracy drops to around 65%. Not sure whether I need to have more training data and/or build more complex model. The questions here are how much training data we should shoot for and what would be the improved model if we need to go for one.
+
+Another suggestion I got from a friend (if the problem is stemming from larger number of classes) is to train a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy.
 
 We explored google recognition / speech_recognition but it needs internet / online connection.
 
