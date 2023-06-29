@@ -22,7 +22,7 @@ We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which i
 
 We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy).
 
-To improve the accuracy further we tried to train hierarchical models (Thanks @github/sameermahajan). One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
+To improve the accuracy further we tried to train hierarchical models. One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
 vertical:- label names: \['1-18' '19-28' '29-38'\]
 classification:- 1-18 and
 horizontal
@@ -38,7 +38,7 @@ We have also put together a [Kivy android app](https://github.com/sameermahajan/
 
 We are also exploring wave2vec2_xlsr_marathi_model which is just over 1 GB but need to test further.
 
-We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition). However when we tried [finger printing](https://github.com/worldveil/dejavu) on our recorded audio samples (about 50 per number), for a few numbers, the fingerprints were totally different for different samples of the same number. It makes us believe that this approach also won't work in our case. It could be due to the difference in our use case of
+We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-processing-fingerprinting-and-recognition) Thanks [Chiradeep](https://github.com/chiradeep) for the suggestion. However when we tried [finger printing](https://github.com/worldveil/dejavu) on our recorded audio samples (about 50 per number), for a few numbers, the fingerprints were totally different for different samples of the same number. It makes us believe that this approach also won't work in our case. It could be due to the difference in our use case of
 - just vocal and no instruments causing different, may be narrower frequency spread
 - short samples of about 3-4 seconds meaning no multi fingerprint checkpoints for the same sample for comparison
 - uncotrolled varied recording conditions unlike songs etc.
