@@ -1,5 +1,6 @@
 import tensorflow as tf
 from keras import models
+import numpy as np
 
 model = tf.keras.models.load_model("marathi-20")
 model.summary()
@@ -11,3 +12,4 @@ waveform = x
 x = get_spectrogram(x)
 x = x[tf.newaxis,...]
 prediction = model(x)
+print (np.argmax(prediction))
