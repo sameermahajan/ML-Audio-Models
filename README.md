@@ -22,7 +22,7 @@ We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which i
 
 We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy).
 
-To improve the accuracy further we tried to train hierarchical models. One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
+To improve the accuracy further we tried to train hierarchical models (Thanks @github/sameermahajan). One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
 vertical:- label names: \['1-18' '19-28' '29-38'\]
 classification:- 1-18 and
 horizontal
