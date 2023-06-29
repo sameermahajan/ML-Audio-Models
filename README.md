@@ -20,9 +20,13 @@ This repository has code working with various audio models like
 
 We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which is reasonable but it is rather large over 6 GB to fit in an android app.
 
-We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy) only upto 20 commands / numbers. However when I try to train it for 40 numbers (each one having around 50 samples) the accuracy drops to around 65%. Not sure whether I need to have more training data and/or build more complex model. The questions here are how much training data we should shoot for and what would be the improved model if we need to go for one.
+We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy).
 
-Another suggestion I got from a friend (if the problem is stemming from larger number of classes) is to train a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy.
+To improve the accuracy further we tried to train hierarchical models. One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
+vertical:- label names: \['1-18' '19-28' '29-38'\]
+classification:- 1-18 and
+horizontal
+label names: \['19-99' '20-100' '21-91' '22-92' '23-93' '24-94' '25-95' '26-96' '27-97' '28-98'\]
 
 We explored google recognition / speech_recognition but it needs internet / online connection.
 
@@ -44,6 +48,7 @@ We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-process
 With above findings, we are going to
 - put out [PaadasML](https://github.com/sameermahajan/PaadasML) and / or [PaadasMLFlaskApp](https://github.com/sameermahajan/PaadasMLFlaskApp) for feedback and audio sample collection
 - train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
+- collect audio samples upto numbers 100 and try offline tensorflow model
 
 ## Issue Deploying pyaudio package on android (ARM)
 
