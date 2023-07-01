@@ -1,6 +1,7 @@
 import tensorflow as tf
 from keras import models
 import numpy as np
+import sys
 
 def get_spectrogram(waveform):
   # Convert the waveform to a spectrogram via a STFT.
@@ -13,15 +14,20 @@ def get_spectrogram(waveform):
   # shape (`batch_size`, `height`, `width`, `channels`).
   spectrogram = spectrogram[..., tf.newaxis]
   return spectrogram
-  
-model = tf.keras.models.load_model("marathi-20")
-model.summary()
 
-x = tf.io.read_file('../samples/1/1_0.wav')
-x, sample_rate = tf.audio.decode_wav(x, desired_channels=1, desired_samples=16000,)
-x = tf.squeeze(x, axis=-1)
-waveform = x
-x = get_spectrogram(x)
-x = x[tf.newaxis,...]
-prediction = model(x)
-print (np.argmax(prediction))
+def main(file_name):
+    model = tf.keras.models.load_model("../ML-Audio-Models/tensorflow/marathi-40")
+    #model.summary()
+
+    x = tf.io.read_file(file_name)
+    x, sample_rate = tf.audio.decode_wav(x, desired_channels=1, desired_samples=16000,)
+    x = tf.squeeze(x, axis=-1)
+    waveform = x
+    x = get_spectrogram(x)
+    x = x[tf.newaxis,...]
+    prediction = model(x)
+    #print (prediction)
+    print (file_name, np.argmax(prediction))
+
+if __name__ == '__main__':
+    main(sys.argv[1])
