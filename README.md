@@ -50,6 +50,10 @@ With above findings, we are going to
 - train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
 - collect audio samples upto numbers 100 and try offline tensorflow model
 
+## Some Additional Contributions from the project
+
+- [Marathi Numbers 1-20 dataset](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-20)
+  
 ## Issue Deploying pyaudio package on android (ARM)
 
 For using SpeechRecognition package we need pyaudio package. To bundle it in an apk (to deploy and use it on android), it needs to be installed using pip.
