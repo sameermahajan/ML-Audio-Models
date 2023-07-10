@@ -53,8 +53,8 @@ With above findings, we are going to
 ## Some Additional Contributions from the project
 
 ### Datasets
-- [Marathi Numbers 1-20 dataset](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-20)
-- [Marathi Numbers 1-40 dataset](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-40)
+- [Marathi Numbers 1-20](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-20)
+- [Marathi Numbers 1-40](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-40)
   
 ## Issue Deploying pyaudio package on android (ARM)
 
