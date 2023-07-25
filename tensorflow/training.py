@@ -3,7 +3,7 @@ from keras import utils
 from keras import layers
 from keras import models
 import numpy as np
-import tensorflowjs as tfjs
+#import tensorflowjs as tfjs
 
 train_ds, val_ds = utils.audio_dataset_from_directory(
     directory='../samples',
@@ -97,7 +97,7 @@ history = model.fit(
     callbacks=tf.keras.callbacks.EarlyStopping(verbose=1, patience=2),
 )
 
-model.save("marathi-20")
-tfjs.converters.save_keras_model(model, "marathi-20-js")
+model.save("marathi_1-40_61-90")
+#tfjs.converters.save_keras_model(model, "marathi-40-js")
 
 
