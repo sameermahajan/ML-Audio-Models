@@ -89,13 +89,14 @@ model.compile(
     metrics=['accuracy'],
 )
 
-EPOCHS = 10
+EPOCHS = 20
 history = model.fit(
     train_spectrogram_ds,
     validation_data=val_spectrogram_ds,
     epochs=EPOCHS,
     callbacks=tf.keras.callbacks.EarlyStopping(verbose=1, patience=2),
 )
+
 
 model.save("marathi_1-40_61-90")
 #tfjs.converters.save_keras_model(model, "marathi-40-js")
