@@ -57,7 +57,7 @@ With above findings, we are going to
 - [Marathi Numbers 1-40](https://huggingface.co/datasets/SameerMahajan/marathi_numbers-1-40)
 
 ### Models
-- [Tensorflow Audio Model for marathi numbers 1 through 40](https://github.com/tensorflow/tfhub.dev/blob/master/assets/docs/sameermahajan/marathi-numbers-1-40/1.md)
+- [Tensorflow Audio Model for marathi numbers 1 through 40](https://tfhub.dev/sameermahajan/marathi-numbers-1-40/1)
   
 ## Issue Deploying pyaudio package on android (ARM)
 
