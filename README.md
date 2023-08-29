@@ -18,15 +18,15 @@ This repository has code working with various audio models like
 
 ## Current Project Status
 
-We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which is reasonable but it is rather large over 6 GB to fit in an android app.
-
-We came across speech commands model (tensor flow CNN) but it is reasonable (~90% accuracy).
+We came across speech commands model (tensor flow CNN). It has reasonable accuracy over 90% for numbers 1 through 40. The accuracy dropped further down to around 85% with 70 numbers and around 82% with 100 numbers.
 
 To improve the accuracy further we tried to train hierarchical models. Thanks [Harshad Nanal](https://github.com/hniot) for the suggestion. One of the approaches was a 'tens' model and 'units' models (10 of them namely for 1-10, 11-20, ..., 91-100). Then run the inferencing through the tens model and qualified units model (only one so overall running through only two models). As the number of classes for each model are limited to 10, we might get better model wise and eventually overall accuracy. Another approach was to use vertical and horizontal models as:
 vertical:- label names: \['1-18' '19-28' '29-38'\]
 classification:- 1-18 and
 horizontal
 label names: \['19-99' '20-100' '21-91' '22-92' '23-93' '24-94' '25-95' '26-96' '27-97' '28-98'\]
+
+We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which is reasonable but it is rather large over 6 GB to fit in an android app.
 
 We explored google recognition / speech_recognition but it needs internet / online connection.
 
@@ -46,9 +46,11 @@ We also tried [Shazam](https://www.toptal.com/algorithms/shazam-it-music-process
 ## Current Plan
 
 With above findings, we are going to
-- put out [PaadasML](https://github.com/sameermahajan/PaadasML) and / or [PaadasMLFlaskApp](https://github.com/sameermahajan/PaadasMLFlaskApp) for feedback and audio sample collection
-- train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
-- collect audio samples upto numbers 100 and try offline tensorflow model
+-  Add some [UI](https://youtu.be/LAKjpql5sHs). You can interact with our [hosted flask app version](https://paadas-flask-app.onrender.com/) for its look and feel (bear its speech recognition which is currently way off).
+-  Build a lightweight small footprint offline version of our [PaadasML](https://github.com/sameermahajan/Paadas) android app to reach masses having devices with small memory, disk and poor network connectivity based on this model.
+- Improve accuracy of this model as determined by field trials of the app.
+- Put out [PaadasML](https://github.com/sameermahajan/PaadasML) and / or [PaadasMLFlaskApp](https://github.com/sameermahajan/PaadasMLFlaskApp) for feedback and audio sample collection
+- Train tensoflow model with more data (as collected above) and possibly improve the model as RNN, LSTM, more layers etc.
 
 ## Some Additional Contributions from the project
 
@@ -58,7 +60,8 @@ With above findings, we are going to
 
 ### Models
 - [Tensorflow Audio Model for marathi numbers 1 through 40](https://tfhub.dev/sameermahajan/marathi-numbers-1-40/1)
-  
+- [Tensorflow Audio Model for 100 marathi numbers](https://tfhub.dev/sameermahajan/marathi-numbers-1-100/1)
+- 
 ## Issue Deploying pyaudio package on android (ARM)
 
 For using SpeechRecognition package we need pyaudio package. To bundle it in an apk (to deploy and use it on android), it needs to be installed using pip.
