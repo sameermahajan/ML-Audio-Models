@@ -9,5 +9,4 @@ On ubuntu machine
 - tensorflow_model_server --rest_api_port=8501 --model-name=marathi-100 --model_base_path=/mnt/c/ML/Tables/ML-Audio-Models/tensorflow/serve
 
 # querying model
-- query.py for python / tensorflow code
-- [Querying the REST Endpoint](https://huggingface.co/blog/tf-serving-vision#querying-the-rest-endpoint)
+- query.py for [Querying the REST Endpoint](https://huggingface.co/blog/tf-serving-vision#querying-the-rest-endpoint)
