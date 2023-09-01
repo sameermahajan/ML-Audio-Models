@@ -13,4 +13,7 @@ headers = {"content-type": "application/json"}
 json_response = requests.post(
             "http://localhost:8501/v1/models/default/versions/1:predict", data=data, headers=headers
             )
-print(json.loads(json_response.text))
+#print(json.loads(json_response.text))
+
+import numpy as np
+print(np.argmax(np.array((json.loads(json_response.text)["predictions"][0]))))
