@@ -25,4 +25,5 @@ class_to_number = {0 : 1,  1 : 10,  2 : 100,  3 : 11,  4 : 12,  5 : 13,  6 : 14,
                    67 : 7,  68 : 70,  69 : 71,  70 : 72,  71 : 73,  72 : 74,  73 : 75,  74 : 76,  75 : 77,  76 : 78,  77 : 79,  
                    78 : 8,  79 : 80,  80 : 81,  81 : 82,  82 : 83,  83 : 84,  84 : 85,  85 : 86,  86 : 87,  87 : 88,  88 : 89,  
                    89 : 9,  90 : 90,  91 : 91,  92 : 92,  93 : 93,  94 : 94,  95 : 95,  96 : 96,  97 : 97,  98 : 98,  99 : 99}
-print(class_to_number(np.argmax(np.array((json.loads(json_response.text)["predictions"][0])))))
+print(np.argmax(np.array(json.loads(json_response.text)["predictions"][0])))
+#print(class_to_number(np.argmax(np.array(json.loads(json_response.text)["predictions"][0]))))
