@@ -6,3 +6,7 @@ On ubuntu machine
   + curl https://storage.googleapis.com/tensorflow-serving-apt/tensorflow-serving.release.pub.gpg | sudo apt-key add -
   + sudo apt-get update && sudo apt-get install tensorflow-model-server
 - tensorflow_model_server --rest_api_port=8501 --model-name=marathi-100 --model_base_path=/mnt/c/ML/Tables/ML-Audio-Models/tensorflow/serve
+
+# querying model
+- query.py for python / tensorflow code
+- [Querying the REST Endpoint]{https://huggingface.co/blog/tf-serving-vision#querying-the-rest-endpoint)
