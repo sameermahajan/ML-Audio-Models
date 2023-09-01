@@ -10,4 +10,4 @@ On ubuntu machine
 
 # querying model
 - query.py for python / tensorflow code
-- [Querying the REST Endpoint]{https://huggingface.co/blog/tf-serving-vision#querying-the-rest-endpoint)
+- [Querying the REST Endpoint](https://huggingface.co/blog/tf-serving-vision#querying-the-rest-endpoint)
