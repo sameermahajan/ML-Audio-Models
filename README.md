@@ -26,6 +26,8 @@ classification:- 1-18 and
 horizontal
 label names: \['19-99' '20-100' '21-91' '22-92' '23-93' '24-94' '25-95' '26-96' '27-97' '28-98'\]
 
+[This approach](https://www.kaggle.com/code/christianlillelund/classify-mnist-audio-using-spectrograms-keras-cnn/notebook#Modelling) seems even better.
+
 We came across whisper model of "DrishtiSharma/whisper-large-v2-marathi" which is reasonable but it is rather large over 6 GB to fit in an android app.
 
 We explored google recognition / speech_recognition but it needs internet / online connection.
